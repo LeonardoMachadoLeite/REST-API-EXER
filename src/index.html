@@ -9,5 +9,42 @@
 </head>
 <body>
   <app-root></app-root>
+
+  <form:post>
+
+    <div>
+      <p>
+        Médico Responsável: 
+        <select ng-for*='let medico of listMedico' class='AppModule'>{{medico.nome}}</select>
+      </p>
+    </div>
+    <div>
+      <p>
+        Nome Paciente: 
+        <input ng-model="paciente.nome" type="text">
+      </p>
+    </div>
+    <div>
+      <p>
+        Tipo Sanguíneo: 
+        <select ng-model="paciente.tipoSanguineo">
+          <option value="+AB">+AB</option>
+          <option value="-AB">-AB</option>
+          <option value="+A">+A</option>
+          <option value="-A">-A</option>
+          <option value="+B">+B</option>
+          <option value="-B">-B</option>
+          <option value="+O">+O</option>
+          <option value="-O">-O</option>
+        </select>
+      </p>
+    </div>
+    <div>
+      <input type="submit" >
+    </div>
+
+</form>
+
 </body>
+
 </html>
