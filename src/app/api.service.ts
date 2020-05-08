@@ -15,12 +15,8 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getMedicos() : any {
-    this.httpClient.get('${this.API_URL}/medicos').subscribe(data => {
-      return {
-        "data": data
-      };
-    });
+  public getMedicos() {
+    return this.httpClient.get<string[]>('${this.API_URL}/medicos');
   }
 
   public postPaciente(medicoResponsavel: String, nomePaciente: String, tipoSanguineo: String) {

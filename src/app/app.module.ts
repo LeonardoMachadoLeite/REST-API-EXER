@@ -18,10 +18,13 @@ import { ApiService } from './api.service'
 })
 export class AppModule implements OnInit{
 
-  listMedico: any;
+  listMedico: string[];
+  apiService: ApiService;
 
   ngOnInit() {
-    this.listMedico = ApiService.getMedicos();
+    this.apiService.getMedicos().subscribe( data => {
+      this.listMedico = data;
+    });
   }
 
  }
